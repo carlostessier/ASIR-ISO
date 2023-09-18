@@ -8,97 +8,114 @@ keywords: [ASIR, ISO, Arquitectura de un Sistema Informático, licencias]
 
 \newpage
 
-# Licencias
+# Tipos de Licenciamiento y Propiedad en el Software
 
-## Licencia
+## ¿Qué es una Licencia?
 
-Contrato entre el desarrollador de un software sometido a propiedad intelectual y a derechos de autor y el usuario, en el cual se definen con precisión los derechos y deberes de ambas partes. Es el desarrollador, o aquél a quien éste haya cedido los derechos de explotación, quien elige la licencia según la cual distribuye el software.
+Una licencia es un acuerdo legal que establece las condiciones bajo las cuales se puede usar, redistribuir o modificar un software. Es una herramienta que permite a los creadores especificar qué se puede y qué no se puede hacer con su trabajo. El tipo de licencia determina si el software es libre, de código abierto, propietario, entre otros.
 
-## Patente
+## Patentes: Protegiendo la Innovación
 
-Conjunto de derechos exclusivos garantizados por un gobierno o autoridad al inventor de un nuevo producto (material o inmaterial) susceptible de ser explotado industrialmente para el bien del solicitante por un periodo de tiempo limitado.
+Una patente es un conjunto de derechos exclusivos otorgados a un inventor o titular por una entidad gubernamental. Estos derechos permiten al titular de la patente proteger su invención contra la fabricación, venta o uso no autorizado durante un período determinado, generalmente 20 años.
 
-## Derecho de autor o copyright
+## Copyright o Derecho de Autor: Resguardando la Creatividad
 
-Forma de protección proporcionada por las leyes vigentes en la mayoría de los países para los autores de obras originales incluyendo obras literarias, dramáticas, musicales, artísticas e intelectuales, tanto publicadas como pendientes de publicar.
+El derecho de autor o "copyright" es una protección legal otorgada a los creadores de obras originales. Estas obras pueden ser literarias, musicales, artísticas, y más. Esta protección otorga al titular el derecho exclusivo de reproducir, distribuir, realizar, mostrar o licenciar su obra, y otros pueden hacerlo solo con permiso explícito del titular.
 
-## Software libre
+## El Software Libre: Más Allá del Costo
 
-Proporciona la libertad de:
+El software libre promueve la libertad de los usuarios en relación con el software. Esta filosofía otorga a los usuarios el derecho de:
 
-* Ejecutar el programa, para cualquier propósito;
-* Estudiar el funcionamiento del programa, y adaptarlo a sus necesidades;
-* Redistribuir copias;
-* Mejorar el programa, y poner sus mejoras a disposición del público, para beneficio de toda la comunidad.
+* **Ejecución:** Usar el programa con cualquier propósito.
+* **Estudio:** Acceder al código fuente para entender su funcionamiento.
+* **Modificación:** Ajustar el software según las necesidades individuales.
+* **Redistribución:** Compartir el software, con o sin cambios, para ayudar a otros.
 
-## Software de fuente abierta
+## Código Abierto: Transparencia y Colaboración
 
-Sus términos de distribución cumplen los criterios de
+El software de código abierto, si bien comparte similitudes con el software libre, se centra en la disponibilidad del código fuente. Los principios que rigen el software de código abierto incluyen:
 
-* Distribución libre;
-* Inclusión del código fuente;
-* Permitir modificaciones y trabajos derivados en las mismas condiciones que el software original;
-* Integridad del código fuente del autor, pudiendo requerir que los trabajos derivados tengan distinto nombre o versión;
-* No discriminación a personas o grupos;
-* Sin uso restringido a campo de actividad;
-* Los derechos otorgados a un programa serán válidos para todo el software redistribuido sin imponer condiciones complementarias;
-* La licencia no debe ser específica para un producto determinado;
-* La licencia no debe poner restricciones a otro producto que se distribuya junto con el software licenciado;
-* La licencia debe ser tecnológicamente neutral.
+* **Distribución Libre:** No se deben restringir a nadie la redistribución del software.
+* **Acceso al Código Fuente:** El software debe incluir el código fuente o permitir su obtención.
+* **Libertad de Modificación:** Se deben permitir modificaciones y trabajos derivados.
+* **Preservación de la Integridad:** Los cambios en el código pueden requerir renombrar o cambiar la versión.
+* **No Discriminación:** La licencia no puede discriminar contra individuos o grupos.
+* **Aplicabilidad Universal:** La licencia no debe restringir el uso del software en ninguna actividad o campo.
+* **Distribución de Licencia:** Las licencias deben aplicarse a todos sin necesidad de una licencia adicional.
+* **Licencia no Específica a un Producto:** No se debe limitar la licencia a un componente específico del software.
+* **No Restrictiva con Otros Software:** El software de código abierto puede ser parte de paquetes de distribución con diferentes licencias.
+* **Neutralidad Tecnológica:** No se pueden imponer restricciones basadas en la tecnología usada.
 
-## Estándar abierto
+# Estándar Abierto
 
-Según Bruce Perens, el basado en los principios de
+Basándonos en la definición de Bruce Perens, un estándar abierto es aquel que sigue los siguientes principios:
 
-* Disponibilidad;
-* Maximizar las opciones del usuario final;
-* Sin tasas sobre la implementación;
-* Sin discriminación de implementador;
-* Permiso de extensión o restricción;
-* Evitar prácticas predatorias por fabricantes dominantes
+- **Disponibilidad**: El estándar debe ser accesible libremente y estar disponible para el público.
+  
+- **Maximizar las opciones del usuario final**: Debe beneficiar y mejorar la experiencia del usuario, otorgándole diversas opciones de uso.
+  
+- **No hay tasas sobre la implementación**: No debe incurrir en costos adicionales para su implementación.
 
-## Software de dominio público
+- **No discriminar al implementador**: Todos los desarrolladores, sin importar quiénes sean, deben tener la misma capacidad para implementar y utilizar el estándar.
+  
+- **Permiso para extender o restringir**: Se debe poder expandir o limitar el estándar según las necesidades del proyecto.
+  
+- **Evitar prácticas predatorias por fabricantes dominantes**: Proteger el estándar de ser monopolizado o utilizado de manera desleal por grandes corporaciones.
 
-Aquél que no está protegido con copyright
+**Ejemplo de uso**: Los formatos de archivo **.ODT (Open Document Text)** y **.ODS (Open Document Spreadsheet)** son estándares abiertos utilizados por suites ofimáticas como LibreOffice y OpenOffice.
 
-## Software con copyleft
+## Software de Dominio Público
 
-Software libre cuyos términos de distribución no permiten a los redistribuidores agregar ninguna restricción adicional cuando lo redistribuyen o modifican, o sea, la versión modificada debe ser también libre
+Este tipo de software no tiene restricciones de derechos de autor, lo que permite a cualquier persona utilizarlo, modificarlo y distribuirlo como desee.
 
-## Software semi libre
+**Ejemplo**: **SQLite**, una biblioteca que proporciona una base de datos relacional ligera, es software de dominio público.
 
-Aquél que no es libre, pero viene con autorización de usar, copiar,
-distribuir y modificar para particulares sin fines de lucro
+## Software con Copyleft
+
+Este software es libre, pero su licencia asegura que cualquier modificación o redistribución del mismo también sea libre.
+
+**Ejemplo**: **GNU/Linux** es un sistema operativo con copyleft, garantizando que todas sus variantes y distribuciones sean igualmente libres.
+
+## Software Semi-Libre
+
+Se puede utilizar, copiar, distribuir y modificar, pero generalmente con la restricción de que sea sin fines de lucro.
+
+**Ejemplo**: **Xv**, un visualizador de imágenes para el sistema X Window, permite usos no comerciales.
 
 ## Freeware
 
-Se usa comúnmente para programas que permiten la redistribución pero no la
-modificación (y su código fuente no está disponible)
+Programas disponibles para su uso y distribución sin costo, pero no se puede modificar y el código fuente generalmente no está disponible.
+
+**Ejemplo**: **Adobe Acrobat Reader** para leer documentos PDF.
 
 ## Shareware
 
-Software con autorización de redistribuir copias, pero debe pagarse cargo por licencia de uso continuado.
+Software que se puede descargar y usar de forma gratuita, pero por un tiempo limitado o con características limitadas.
 
-## Software privativo
+**Ejemplo**: **WinRAR**, un compresor de archivos, permite a los usuarios probarlo durante un período antes de decidir comprar una licencia.
 
-Aquél cuyo uso, redistribución o modificación están prohibidos o
-necesitan una autorización.
+## Software Privativo
 
-## Software comercial
+Software que no permite su libre uso, modificación o distribución.
 
-El desarrollado por una empresa que pretende ganar dinero por su
-uso.
+**Ejemplo**: **Microsoft Windows** es un software propietario, es decir, no puedes redistribuirlo o modificarlo sin permiso.
+
+## Software Comercial
+
+Software creado con el objetivo principal de generar ingresos.
+
+**Ejemplo**: **Adobe Photoshop**, una herramienta de edición de imágenes, es software comercial.
 
 \newpage
 
-## Tipos de licencias
+## Clasificación de Licencias
 
-El siguiente gráfico puede expresar los distintos conjuntos de licencias, de donde se puede deducir que software libre y de fuente abierto no son estrictamente similares y que la cualidad del copyleft no es una condición indispensable en todas estas licencias.
--
-![Free Software](Licencias/FreeSoftware.PNG) 
+El siguiente gráfico ilustra cómo diversas licencias interactúan y se superponen, indicando que términos como software libre y de código abierto no son exactamente lo mismo y que el copyleft no es necesariamente un requisito para todas estas licencias:
+
+![Tipos de Software](Licencias/FreeSoftware.PNG) 
 \
 
-El software no se vende, se *licencia*. Una licencia es aquella autorización formal con carácter contractual que un autor de un software da a un interesado para ejercer *actos de explotación legales*. Es decir, el software no se compra, sino que se adquieren una serie de derechos sobre el uso que se le puede dar. En las licencias de software libre esos derechos son muy abiertos y permisivos, apenas hay restricciones al uso de los programas. De ahí que ayude al desarrollo de la cultura. Pueden existir tantas licencias como acuerdos concretos se den entre el autor y el licenciatario. Desde el punto de vista del software libre, existen distintas variantes del concepto o grupos de licencias:
+El software no es un producto que se compre per se, sino que se *licencia*. Una licencia es el permiso otorgado por el creador o titular de un software para que un tercero realice actividades específicas con él. Esto significa que cuando "compras" software, en realidad estás adquiriendo un conjunto de derechos sobre cómo puedes usarlo. Las licencias de software libre otorgan derechos extensos y abiertos, lo que implica pocas restricciones sobre cómo se puede usar el software. Esta apertura beneficia el progreso y difusión cultural. Hay una amplia gama de licencias disponibles, dependiendo de los derechos que el autor desee otorgar a los usuarios.
 
 ### Licencias GPL
 
@@ -140,39 +157,38 @@ En España, toda obra derivada está tan protegida como una original, siempre qu
 
 ## Sistemas Operativos Libres
 
-Son sistemas que pueden usarse libremente, ser distribuidos, permiten que se acceda a su código fuente y permiten que esté sea modificado de la forma que queramos. El sistema operativo que estamos usando (**Debian**) es un buen ejemplo de Sistema Operativo Libre.
+Los sistemas operativos libres ofrecen una libertad de uso, distribución y modificación, además de acceso transparente a su código fuente. Esto posibilita la adaptación, mejora y redistribución del sistema según las necesidades de los usuarios. Un excelente ejemplo de esto es **Debian**, el cual es tanto gratuito como libre. Sin embargo, es crucial entender que "libre" no necesariamente se traduce como "gratuito", ya que se refiere a la libertad de uso y modificación, no al costo.
 
-No hay que confundir el hecho de que sean libres con el hecho de que sean gratuitos.
+**Ejemplo**: **Fedora** y **Ubuntu** son otros ejemplos populares de sistemas operativos libres.
 
-## Licencias de los Sistemas Operativos propietarios
+## Licencias de los Sistemas Operativos Propietarios
 
-Dentro de los sistemas operativos comerciales, propietarios y privativos, nos podemos
-encontrar con diversos tipos de licencia de uso:
+Los sistemas operativos propietarios o comerciales vienen acompañados de distintas modalidades de licencias, limitando la forma en que el usuario puede utilizar el software. Estas licencias pueden variar según el uso previsto, la cantidad de dispositivos y otras circunstancias. A continuación, se detallan algunos tipos comunes de licencias:
 
-### O.E.M.
+### O.E.M. (Original Equipment Manufacturer)
 
-OEM (abreviatura del inglés original equipment manufacturer, en español sería fabricante de equipamiento original). Este tipo de licencias se las otorga el desarrollador del sistema operativo al fabricante de hardware, de modo que cuando nosotros compramos uno de sus productos, este viene con una licencia de uso del sistema operativo de tipo OEM. La particularidad de este tipo de licencias, es el que el sistema operativo viene preparado para ese hardware específicamente, de modo que no tenemos realmente una licencia de uso del sistema operativo, sino una licencia de uso del sistema operativo únicamente para ese hardware en concreto.
+Este tipo de licencia se otorga directamente a los fabricantes de hardware. Cuando adquirimos un dispositivo, a menudo viene preinstalado con software bajo licencia OEM. La peculiaridad de estas licencias es que están vinculadas específicamente al hardware inicial, limitando la reutilización en otros dispositivos. A menudo son más asequibles pero vienen con restricciones y sin accesorios adicionales como manuales o cajas.
 
-Estas licencias son las más económicas, y suelen poseer restricciones especiales, aparte
-de venir sin manuales ni caja.
+**Ejemplo**: Un **Dell** o **HP** que compra con Windows preinstalado.
 
 ### RETAIL
 
-Es la licencia que compramos directamente del desarrollador. Somos propietarios de la licencia, podemos instarlo en cualquier tipo de hardware compatible, podemos revender la licencia o cederla, etc.
+Con una licencia Retail, adquieres directamente la licencia del desarrollador. Esto te da el derecho de instalar y usar el software en cualquier dispositivo compatible, transferir o incluso revender la licencia. Suelen venir con embalaje completo, incluyendo caja y manuales, y están diseñadas para ser utilizadas en una única máquina a la vez.
 
-Normalmente solo permiten su uso en una sola maquina a la vez. Vienen con su caja y manuales.
+**Ejemplo**: Comprar una copia física de **Windows 10** en una tienda.
 
-En las licencias de tipo retail, normalmente podemos elegir entre una licencia completa, o una licencia de actualización, que permite actualizar un sistema anterior al nuevo, por un coste algo más reducido.
+### VLM (Licencias por Volumen)
 
-### VLM (LICENCIAS POR VOLUMEN)
+Estas licencias son ideales para empresas o instituciones que necesitan administrar múltiples dispositivos. Permiten instalar y activar el software en un número predefinido de dispositivos usando una única clave. Aunque son más caras en total, ofrecen ahorros significativos en comparación con la adquisición individual de licencias.
 
-Para una empresa con cientos de ordenadores, es complicado controlar las licencias individuales de cada una de sus máquinas. Existe la posibilidad de contratar un tipo de licencia especial con el desarrollador, de modo que con una única clave de licencia, podemos utilizar varias máquinas a la vez.
-Es habitual que existan licencias de 25 usos concurrentes, 50, etc.
-Son las licencias más caras evidentemente, aunque son bastante más económicas que comprar cada una de las licencias individualmente.
+**Ejemplo**: Una empresa que compra licencias para **Windows** para 100 computadoras de empleados.
 
-### MSDN (LICENCIAS DE EDUCACIÓN.)
+### MSDN (Licencias de Educación)
 
-Son unas licencias especiales de Microsoft que permiten su uso únicamente para actividades educativas y de formación. Cualquier uso de estas licencias en equipos que desarrollen actividades fuera de este ámbito, es ilegal. Existen también licencias de este tipo para empresas de desarrollo, academias, etc.
+Microsoft ofrece licencias de educación bajo su programa MSDN. Están destinadas a entornos educativos, formación y desarrollo, y no deben usarse para fines comerciales. Esto permite que instituciones educativas y desarrolladores tengan acceso a herramientas y sistemas a costos reducidos.
 
-<!-- ![OEM](Licencias/SO_OEM.PNG) -->
+**Ejemplo**: Un estudiante que utiliza una versión de **Windows** o **Visual Studio** bajo una licencia MSDN para proyectos académicos.
+
+![Licencias OEM](Licencias/SO_OEM.PNG)
+
 \ 
