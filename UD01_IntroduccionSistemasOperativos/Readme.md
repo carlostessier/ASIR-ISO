@@ -18,19 +18,19 @@ keywords: [ASIR, ISO, Arquitectura de un Sistema Informático, licencias]
  * 1.6 Gestores de arranque. BIOS, UEFI.
  * 1.7 Sistemas LIVE
 
-## Teoria
+## Teoria 
 
-* [Arquitectura de un Sistema Informático] (https://github.com/aberlanas/ImplantacionSistemasOperativos/blob/master/UD01_CaracteristicasDeLosSistemasOperativos/ArquitecturaSistemaInformático.md)
-* [Arquitectura de un Sistema Operativo] (https://github.com/aberlanas/ImplantacionSistemasOperativos/blob/master/UD01_CaracteristicasDeLosSistemasOperativos/ArquitecturaSistemaOperativo.md)
+* [Arquitectura de un Sistema Informático] (https://github.com/carlostessier/ASIR-ISO/blob/master/UD01_CaracteristicasDeLosSistemasOperativos/ArquitecturaSistemaInformático.md)
+* [Arquitectura de un Sistema Operativo] (https://github.com/carlostessier/ASIR-ISO/blob/master/UD01_CaracteristicasDeLosSistemasOperativos/ArquitecturaSistemaOperativo.md)
 
-* [Licencias] (https://github.com/aberlanas/ImplantacionSistemasOperativos/blob/master/UD01_CaracteristicasDeLosSistemasOperativos/Licencias.md)
-* [Glosario](https://github.com/aberlanas/ImplantacionSistemasOperativos/blob/master/UD01_CaracteristicasDeLosSistemasOperativos/Glosario.md)
+* [Licencias] (https://github.com/carlostessier/ASIR-ISO/blob/master/UD01_CaracteristicasDeLosSistemasOperativos/Licencias.md)
+* [Glosario](https://github.com/carlostessier/ASIR-ISOblob/master/UD01_CaracteristicasDeLosSistemasOperativos/Glosario.md)
 
 
 ## Ejercicios
 
-* [Ejercicios] (https://github.com/aberlanas/ImplantacionSistemasOperativos/blob/master/UD01_CaracteristicasDeLosSistemasOperativos/Ejercicios.md)
-* [Ejercicios II ] (https://github.com/aberlanas/ImplantacionSistemasOperativos/blob/master/UD01_CaracteristicasDeLosSistemasOperativos/Ejercicios_2.md)
+* [Ejercicios] (https://github.com/carlostessier/ASIR-ISOblob/master/UD01_CaracteristicasDeLosSistemasOperativos/Ejercicios.md)
+* [Ejercicios II ] (https://github.com/carlostessier/ASIR-ISO/blob/master/UD01_CaracteristicasDeLosSistemasOperativos/Ejercicios_2.md)
 
 
 ## Algunos Links de Interés

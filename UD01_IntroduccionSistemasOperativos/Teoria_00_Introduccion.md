@@ -1,6 +1,6 @@
 ---
 title: UD01 - Introducción a los Sistemas Operativos
-author: Angel Berlanas Vicente
+author: Angel Berlanas Vicente, Carlos Tessier
 header-includes: |
 lang: es-ES
 keywords: [ASIR, ISO, Arquitectura de un Sistema Informático, licencias]

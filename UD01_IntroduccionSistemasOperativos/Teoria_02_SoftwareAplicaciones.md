@@ -1,6 +1,6 @@
 ---
 title: UD01 - Introducción a los Sistemas Operativos
-author: Angel Berlanas Vicente
+author: Angel Berlanas Vicente, Carlos Tessier
 header-includes: |
 lang: es-ES
 keywords: [ASIR, ISO, Arquitectura de un Sistema Informático, licencias]
@@ -9,59 +9,56 @@ keywords: [ASIR, ISO, Arquitectura de un Sistema Informático, licencias]
 
 \newpage
 
-## ¿Qué es el software?
+## Definición de Software
 
-Forma la parte lógica de nuestro sistema informático.
+El software es el componente lógico e intangible de un sistema informático, encargado de dar instrucciones precisas para que el hardware pueda ejecutar tareas específicas.
 
-Existen varias definiciones similares aceptadas para software, pero probablemente la más formal sea la siguiente:
+De manera más técnica, podemos definir el software como:
 
-**Es el conjunto de los programas de cómputo, procedimientos, reglas, documentación y datos asociados, que forman parte de las operaciones de un sistema de computación.**
+**Conjunto integrado de instrucciones programáticas, algoritmos, reglas y documentación que, juntos, permiten que un sistema informático realice diversas operaciones.**
 
-## Tipos de Software
+## Categorías Principales del Software
 
-Si bien esta distinción es, en cierto modo, arbitraria, y a veces confusa, a fines prácticos se puede clasificar al software en tres grandes tipos:
+El mundo del software es amplio y diverso, pero para fines didácticos, comúnmente se clasifica en tres categorías principales:
 
-### Software de sistema
+### Software de Sistema
 
-Será el que trataremos con más profundidad en el módulo y su objetivo es desvincular al usuario y al programador de los detalles del sistema informático en particular que se use, aislándolo especialmente del procesamiento referido a las características internas de hardware (_capas de abstracción_). 
+Este es el software que sirve como puente entre el hardware y el usuario, proporcionando interfaces y herramientas que abstractan y gestionan los recursos y operaciones del sistema. En este módulo, nos centraremos en profundizar en este tipo de software. Sus componentes principales son:
 
-El software de sistema nos procura adecuadas interfaces de alto nivel, controladores, herramientas y utilidades de apoyo que permiten el mantenimiento del sistema global. Incluye entre otros:
+* **Sistemas Operativos:** Son la base del software de sistema, gestionan los recursos del hardware y ofrecen servicios a los programas de aplicación.
+* **Drivers o Controladores:** Son programas específicos que permiten a un sistema operativo interactuar con un periférico o componente de hardware.
+* **Herramientas de Diagnóstico:** Ayudan a identificar problemas y malfunciones dentro del sistema.
+* **Herramientas de Corrección y Optimización:** Se utilizan para mejorar el rendimiento del sistema y corregir errores.
+* **Servidores:** Software que ofrece servicios a otros programas o dispositivos, ya sea en la misma computadora o en una red.
+* **Utilidades:** Programas que ofrecen funcionalidades adicionales para el manejo y optimización del sistema.
 
-* Sistemas operativos
-* Controladores de dispositivos (Drivers)
-* Herramientas de diagnóstico
-* Herramientas de Corrección y Optimización
-* Servidores
-* Utilidades
+#### Controladores o Drivers
 
-#### Drivers
+Un aspecto fundamental del software de sistema son los drivers o _controladores_. Estos son esenciales para que el hardware y software puedan comunicarse adecuadamente. Cada dispositivo de hardware, como una impresora, tarjeta gráfica o teclado, necesita un driver específico para funcionar correctamente con el sistema operativo en uso.
 
-Los drivers o _controladores_ es el software que se encarga de gestionar o manejar los dispositivos físicos del Sistema (_hardware_).
+### Software de Desarrollo
 
-### Software de programación
+Este tipo de software brinda a los desarrolladores un conjunto de herramientas especializadas para la creación, modificación y optimización de programas y aplicaciones. Estas herramientas facilitan y agilizan el proceso de desarrollo, ofreciendo:
 
-Es el conjunto de herramientas que permiten al programador desarrollar programas informáticos, usando diferentes alternativas y lenguajes de programación, de una manera práctica. Incluyen básicamente:
+* **Editores de Código:** Permiten la escritura y edición de código fuente en diferentes lenguajes de programación.
+* **Compiladores:** Transforman el código fuente escrito por el programador en un código máquina ejecutable.
+* **Intérpretes:** Ejecutan directamente las instrucciones escritas en un lenguaje de programación, sin necesidad de convertirlas previamente a código máquina.
+* **Enlazadores:** Combina múltiples archivos de código objeto para formar un ejecutable o una biblioteca.
+* **Depuradores:** Ayudan a identificar y corregir errores o "bugs" en el código.
+* **Entornos de Desarrollo Integrados (IDE):** Son plataformas que combinan múltiples herramientas (editor, compilador, depurador, etc.) en un único espacio de trabajo, optimizando el proceso de desarrollo. Los IDEs modernos ofrecen interfaces intuitivas y diversas funcionalidades que potencian la eficiencia del programador.
 
-* Editores de texto
-* Compiladores
-* Intérpretes
-* Enlazadores
-* Depuradores
-* Entornos de Desarrollo Integrados (IDE): Agrupan las anteriores herramientas, usualmente en un entorno visual, de forma tal que el programador no necesite introducir múltiples comandos para compilar, interpretar, depurar, etc. Habitualmente cuentan con una avanzada interfaz gráfica de usuario (GUI).
+### Software de Aplicación
 
-### Software de aplicación
+Este tipo de software está diseñado para ayudar a los usuarios a realizar tareas específicas, ya sea en el ámbito personal, profesional o educativo. Algunas de las categorías más prominentes incluyen:
 
-Es aquel que permite a los usuarios llevar a cabo una o varias tareas específicas.Incluye entre muchos otros:
-
-* Aplicaciones para Control de sistemas y automatización industrial
-* Aplicaciones ofimáticas
-* Software educativo
-* Software empresarial
-* Bases de datos
-* Telecomunicaciones (por ejemplo Internet y toda su estructura lógica)
-* Videojuegos
-* Software médico
-* Software de cálculo numérico y simbólico.
-* Software de diseño asistido (CAD)
-* Software de control numérico (CAM)
-  
+* **Software de Automatización y Control:** Utilizado en sistemas industriales para controlar maquinaria y procesos.
+* **Suite Ofimática:** Conjunto de programas que facilitan tareas de oficina, como procesadores de texto, hojas de cálculo y programas de presentación.
+* **Software Educativo:** Diseñado para enseñar o facilitar el aprendizaje en distintas áreas del conocimiento.
+* **Soluciones Empresariales:** Softwares diseñados para optimizar y gestionar procesos empresariales, como ERP (sistemas de planificación de recursos empresariales) o CRM (gestión de relaciones con clientes).
+* **Bases de Datos:** Sistemas que permiten almacenar, recuperar, modificar y gestionar grandes cantidades de información.
+* **Software de Telecomunicaciones:** Herramientas y aplicaciones relacionadas con la comunicación, incluyendo navegadores web, clientes de correo, y servidores.
+* **Videojuegos:** Programas de entretenimiento interactivo.
+* **Software Médico:** Aplicaciones destinadas a facilitar la práctica médica, como sistemas de historias clínicas electrónicas o programas de diagnóstico.
+* **Software de Cálculo:** Programas especializados en cálculos matemáticos avanzados, numéricos o simbólicos.
+* **Diseño Asistido por Computadora (CAD):** Herramientas para el diseño técnico en áreas como la arquitectura o la ingeniería.
+* **Manufactura Asistida por Computadora (CAM):** Software usado en la producción industrial para controlar y optimizar máquinas y procesos.

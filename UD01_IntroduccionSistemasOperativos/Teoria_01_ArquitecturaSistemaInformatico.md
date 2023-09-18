@@ -1,6 +1,6 @@
 ---
 title: UD01 - Introducción a los Sistemas Operativos
-author: Angel Berlanas Vicente
+author: Angel Berlanas Vicente, Carlos Tessier
 header-includes: |
 lang: es-ES
 keywords: [ASIR, ISO, Arquitectura de un Sistema Informático, licencias]
@@ -9,16 +9,26 @@ keywords: [ASIR, ISO, Arquitectura de un Sistema Informático, licencias]
 
 \newpage
 
-# Arquitectura de un Sistema Informático
+# Arquitectura y Componentes de un Sistema Informático
 
-## ¿Qué es? 
+## Definición
 
-Un sistema informático (SI) es un sistema que permite almacenar y procesar información; es el conjunto de partes interrelacionadas: hardware, software y personal informático. El hardware incluye computadoras o cualquier tipo de dispositivo electrónico, que consisten en procesadores, memoria, sistemas de almacenamiento externo, etc. El software incluye al sistema operativo, firmware y aplicaciones, siendo especialmente importante los sistemas de gestión de bases de datos. Por último, el soporte humano incluye al personal técnico que crean y mantienen el sistema (analistas, programadores, operarios, etcétera) y a los usuarios que lo utilizan.
+Un sistema informático (SI) es un conjunto integrado y coordinado de recursos (hardware, software y humano) destinado al procesamiento y gestión de información. Mientras que el hardware se refiere a los dispositivos físicos como procesadores, memoria y dispositivos de almacenamiento, el software abarca el conjunto de programas que permiten al hardware realizar tareas específicas. Este sistema no sería operativo sin el componente humano: desde los profesionales técnicos que desarrollan y mantienen el sistema hasta los usuarios finales que interactúan con él.
 
-## Componentes de un SI
+## Componentes Principales del SI
 
-Un sistema informático está compuesto por los siguientes elementos:
+- **Componente Físico (Hardware):** 
+    - Engloba todos los elementos tangibles del sistema: desde la CPU, memoria RAM, discos duros, hasta los periféricos como teclado, ratón y monitores.
+    - Estos componentes son cruciales para determinar la eficiencia, velocidad y capacidad de almacenamiento del SI.
 
-* *Componente Físico*: Hardware del sistema informático , cables, ordenadores. Estos componentes proporcionan la capacidad y la potencia de calculo del sistema informático.
-* *Componente lógico*: Software del sistema informático, procedimientos y documentación.
-* *Componente humano*: Todas las personas que se encuentran en las fases de un sistema informático: diseño, desarrollo, explotación...
+- **Componente Lógico (Software):** 
+    - Incluye no solo al sistema operativo, que sirve de intermediario entre el usuario y el hardware, sino también a otras aplicaciones y programas.
+    - Los sistemas de gestión de bases de datos (SGBD) son una parte vital, permitiendo organizar, almacenar y recuperar grandes cantidades de información.
+
+- **Componente Humano:** 
+    - Envolucra a todos los individuos que interactúan con el SI en sus diferentes etapas:
+        - **Desarrollo:** Analistas y programadores que diseñan y crean el sistema.
+        - **Mantenimiento:** Técnicos y especialistas que se encargan de actualizar, optimizar y solucionar problemas.
+        - **Operación:** Usuarios que utilizan el sistema para sus tareas diarias, ya sean administrativas, investigativas, comunicativas, entre otras.
+
+Un entendimiento completo del SI involucra la comprensión de cómo estos componentes interactúan entre sí para crear un ecosistema informático eficiente y efectivo.

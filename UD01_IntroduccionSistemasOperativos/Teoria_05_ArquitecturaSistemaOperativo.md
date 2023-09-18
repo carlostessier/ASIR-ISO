@@ -1,6 +1,6 @@
 ---
 title: UD01 - Introducción a los Sistemas Operativos
-author: Angel Berlanas Vicente
+author: Angel Berlanas Vicente, Carlos Tessier
 header-includes: |
 lang: es-ES
 keywords: [ASIR, ISO, Arquitectura de un Sistema Informático, licencias]
@@ -9,292 +9,321 @@ keywords: [ASIR, ISO, Arquitectura de un Sistema Informático, licencias]
 
 \newpage
 
-# Sistemas Operativos
+# Concepto y Funciones de los Sistemas Operativos
 
-## Objetivos del Sistema Operativo
+Los sistemas operativos (SO) son software especializados que actúan como intermediarios entre el hardware del ordenador y el usuario, proporcionando un entorno en el que los programas de aplicación pueden ejecutarse de manera eficiente y segura.
 
-Desde el punto de vista del usuario, el sistema operativo consiste en una serie de programas y funciones que ocultan los detalles del hardware,ofreciéndole una vía sencilla y flexible de acceso al mismo, teniendo dos objetivos fundamentales:
+## Roles Clave de un Sistema Operativo
 
-### Seguridad
+El sistema operativo juega varios roles esenciales en la gestión de la computadora. Aunque la simplificación y la abstracción del hardware son aspectos primordiales, sus responsabilidades van más allá:
 
-El sistema operativo debe actuar contra cualquier manipulación extraña, ya sea accidental o premeditada que pudiera dañar la información, perjudicar a otros usuarios o provocar un funcionamiento indeseado del sistema. Por ejemplo, hay ciertas instrucciones que pueden parar la máquina y otras que realizan operaciones directamente sobre el hardware, que debemos evitar que se utilicen por los programas. Para ello, algunos sistemas proporcionan dos estados, llamados estado protegido (Sistema o `Kernel`), en el cual se ejecuta el sistema operativo, y estado no protegido (Usuario o User), que es el destinado a la ejecución de los programas de usuario y de aplicación. De esta manera se impide que los programas de los usuarios puedan tener contacto directo con el hardware, o puedan forzar un incorrecto funcionamiento del sistema.
+### Seguridad y Protección
 
-![Capas del SO](ArquitecturaSistemaOperativo/SO_Capas.PNG)
-\
+Una de las tareas cruciales del SO es garantizar la seguridad y la integridad de la información y los recursos del sistema. Debe:
 
-### Abstracción
+* Defenderse contra accesos no autorizados, ataques maliciosos y vulnerabilidades.
+* Proteger los datos y programas de los usuarios de interferencias y daños, ya sean intencionales o accidentales.
+* Implementar mecanismos de autenticación y control de acceso.
+* Utilizar modos de operación diferenciados, como el modo kernel (o sistema) y el modo usuario. En el modo kernel, el SO tiene acceso total al hardware y puede ejecutar cualquier instrucción. Por otro lado, los programas en modo usuario tienen restricciones y no pueden interactuar directamente con el hardware ni ejecutar instrucciones sensibles.
 
-La tendencia actual del software y de los lenguajes de programación es ocultar lo más posible los detalles de más bajo nivel, intentando dar a los niveles superiores una visión más sencilla, global y abstracta, ofreciéndoles operaciones para manipular dichas estructuras ocultas, desconociendo por completo la gestión interna de las mismas. Sobre estas estructuras se construyen otras que abstraen a las anteriores, y así sucesivamente. Gracias a la abstracción, los sistemas operativos enmascaran los recursos físicos, permitiendo su manejo con funciones más generales que ocultan las básicas, constituyendo verdaderos recursos ficticios o virtuales, que mejoran y son más potentes que los físicos. Desde el punto de vista de un programa o usuario, la máquina física se convierte, en una máquina extendida, que presenta la ventaja respecto a la física de ofrecer más funciones de las que normalmente soportaría esta última. Entre las posibilidades de esto estarían las carpetas compartidas, los usuarios de red, las impresoras compartidas, etc.
+### Abstracción del Hardware
 
-![Abstraccion del HW](ArquitecturaSistemaOperativo/SO_MaquinaExtendida.PNG)
-\
+El SO ofrece una vista simplificada y uniforme del hardware, ocultando muchos de los detalles intrincados y especificidades de los componentes individuales. Esto permite que:
 
-Desde el punto de vista del usuario, el sistema operativo proporciona servicios que no están presentes en la máquina subyacente. Estos servicios incluyen las facilidades de carga y ejecución de programas, interacción entre el usuario y los programas, permitiendo que se ejecuten varios al mismo tiempo, gestión de los servicios y almacenamiento de datos y programas.
+* Los programas de aplicación no necesiten ser escritos para un hardware específico.
+* Los usuarios interactúen con el sistema de una manera más intuitiva, sin tener que conocer los detalles técnicos del hardware subyacente.
 
-Como resumen, podemos decir que el sistema operativo persigue alcanzar la mayor eficiencia posible del hardware y facilitar el uso del mismo a los usuarios y a las aplicaciones
+![Arquitectura del SO](ArquitecturaSistemaOperativo/SO_Capas.PNG)
+
+**Nota:** El gráfico de "Capas del SO" muestra una representación simplificada de cómo el sistema operativo se sitúa entre el hardware y las aplicaciones, ofreciendo diversos niveles de abstracción y servicios.
+
+A medida que avanzamos en el estudio de los sistemas operativos, es esencial comprender la complejidad y las múltiples capas de operación que existen bajo la superficie de la interacción diaria del usuario. Estas capas trabajan en conjunto para garantizar que el sistema funcione de manera eficiente, segura y confiable.
+
+# Concepto de Abstracción en Sistemas Operativos
+
+La abstracción es un principio clave en el diseño y funcionamiento de los sistemas operativos. Se centra en ocultar la complejidad subyacente de los sistemas y proporcionar interfaces más simplificadas y generales a los niveles superiores. 
+
+## Propósito de la Abstracción
+
+El software moderno y los lenguajes de programación buscan minimizar la exposición a detalles de bajo nivel. Esto se realiza mediante:
+
+* **Simplificación de Interacciones:** Al encapsular y esconder detalles internos, los sistemas operativos proporcionan interfaces más comprensibles y manejables para los programadores y usuarios.
+* **Creación de Recursos Virtuales:** Estos recursos, construidos sobre la base de los recursos físicos, ofrecen capacidades ampliadas y generalmente superiores, transformando la percepción de la máquina física en una "máquina extendida".
+  
+![Representación de la Abstracción](ArquitecturaSistemaOperativo/SO_MaquinaExtendida.PNG)
+
+A través de la lente de abstracción, la máquina física se transfigura en un entorno con características y capacidades ampliadas, donde elementos como carpetas compartidas, usuarios de red o impresoras compartidas se manifiestan como si fueran componentes innatos.
+
+## Beneficios desde la Perspectiva del Usuario
+
+El sistema operativo, mediante la abstracción, introduce servicios y facilidades que trascienden las capacidades directas del hardware:
+
+* **Ejecución Simultánea:** Permite la ejecución concurrente de múltiples programas, potenciando la multitarea.
+* **Interacción Mejorada:** Favorece la comunicación entre el usuario y las aplicaciones, generando una experiencia de usuario más amigable y eficiente.
+* **Administración Optimizada:** Se encarga de la gestión eficaz de recursos, almacenamiento y servicios.
+
+En resumen, el objetivo primordial de la abstracción en el sistema operativo es maximizar la eficacia del hardware, a la vez que simplifica y enriquece su utilización para usuarios y aplicaciones.
 
 \newpage
 
-## Funciones de los Sistemas Operativos
+# Responsabilidades de los Sistemas Operativos
 
-Las funciones de los sistemas operativos son diversas y han ido evolucionando de acuerdo con los progresos que la técnica y la informática han experimentado. Como principales funciones, podríamos enumerar las siguientes:
+Los sistemas operativos desempeñan múltiples funciones cruciales en la informática moderna, actuando como intermediarios entre el hardware y el usuario. A medida que la tecnología avanza, estas funciones se han adaptado y ampliado para satisfacer las necesidades contemporáneas. Veamos las principales responsabilidades de un sistema operativo en detalle:
 
-### Gestión de procesos
+## Funciones Esenciales de los Sistemas Operativos
 
-Hay que diferenciar entre los conceptos programa y proceso. Un programa es un ente pasivo, que cuando se carga en memoria y comienza a ejecutarse, origina uno o varios procesos.
+### Administración de Procesos
 
-### Gestión de la memoria
+Es vital comprender la distinción entre un programa y un proceso. Mientras que un programa es una entidad estática, cuando se carga en memoria y comienza su ejecución se transforma en un proceso activo. Los sistemas operativos gestionan el inicio, ejecución y terminación de estos procesos.
 
-La gestión de memoria, suele ir asociada a la gestión de procesos. Para ejecutar un proceso es necesario asignarle unas direcciones de memoria exclusivas para él y cargarlo en ellas, cuando el proceso finalice su ejecución es necesario liberar las direcciones de memoria que estaba usando.
+### Control de Memoria
 
-### Gestión de ficheros
+La administración de memoria es intrínseca a la gestión de procesos. Al ejecutar un proceso, el sistema operativo asigna un espacio de memoria exclusivo para él. Posteriormente, cuando el proceso concluye, esa memoria es liberada para ser reutilizada.
 
-Un fichero es una abstracción para definir una colección de información no volátil. Su objetivo es proporcionar un modelo de trabajo sencillo con la información almacenada en los dispositivos de almacenamiento. Estos ficheros deben tener espacio asignado en los dispositivos, deben estar protegidos entre ellos, deben organizarse según unos determinados esquemas... todo esto es la gestión de ficheros.
+### Manejo de Archivos
 
-### Gestión de los dispositivos de E/S
+En esencia, un archivo es una representación de datos almacenados. El sistema operativo facilita la creación, lectura, modificación y eliminación de estos archivos, garantizando una organización óptima y una protección adecuada de los mismos.
 
-La gestión de la entrada salida (E/S) tiene como objetivo proporcionar una interfaz de alto nivel de los dispositivos de E/S sencilla de
-utilizar.
+### Coordinación de Dispositivos de Entrada/Salida (E/S)
 
-### Gestión de la red
+Los dispositivos de E/S (como teclados, ratones o impresoras) requieren de una gestión especializada para asegurar su correcta comunicación con el sistema. El sistema operativo se encarga de ofrecer una interfaz intuitiva y eficiente para estos dispositivos.
 
-El sistema operativo es el encargado de gestionar los distintos niveles de red, los drivers (controladores) de los dispositivos involucrados en la red, los protocolos de comunicación, las aplicaciones de red, etc.
+### Gestión de Conexiones de Red
 
-### Protección y seguridad
+Los sistemas operativos modernos manejan aspectos relacionados con la conectividad de red, desde la configuración de hardware y software hasta la administración de protocolos y aplicaciones de red.
 
-Mecanismos para permitir o denegar el acceso a los usuarios y a sus procesos a determinados recursos (ficheros, dispositivos de E/S, red, etc.).
+### Seguridad y Accesibilidad
+
+Un aspecto esencial es garantizar que los recursos del sistema estén protegidos y que solo los usuarios autorizados puedan acceder o modificar determinada información o configuración.
 
 \newpage
 
-## Tipos de Sistemas Operativos
+# Clasificación Actualizada de Sistemas Operativos
 
-Existen muchas categorizaciones, pero una de las más comunes es la de los servicios que ofrece.
+Los sistemas operativos pueden ser categorizados según diferentes criterios. Uno de los más utilizados se basa en los servicios que proporcionan.
 
-![Tipos de SO](ArquitecturaSistemaOperativo/SO_Tipos.PNG)
+![Clasificación de SO Modernos](ArquitecturaSistemaOperativo/SO_Tipos.PNG)
 \
 
-### Según el número de usuarios
+### Basados en la Cantidad de Usuarios
 
 #### Monousuarios
 
-Los sistemas operativos monousuarios son aquéllos que soportan a un usuario a la vez, sin importar el número de procesadores que tenga la computadora o el número de procesos o tareas que el usuario pueda ejecutar en un mismo instante de tiempo.
+Estos sistemas se diseñan para atender a un único usuario en un momento dado, independientemente de la capacidad multitarea del equipo.
 
-Sistemas Operativos Monousuario:
+**Ejemplos de SO Monousuarios actuales:**
 
-* MS-DOS
-* Windows 95
-* Windows 98
+* Windows 11 Home
+* MacOS Monterey (en un contexto de usuario doméstico)
 
 #### Multiusuario
 
-Los sistemas operativos multiusuario son capaces de dar servicio a más de un usuario a la vez, ya sea por medio de varias terminales conectadas a la computadora o por medio de sesiones remotas en una red de comunicaciones. No importa el número de procesadores en la máquina ni el número de procesos que cada usuario puede ejecutar simultáneamente.
+Están diseñados para atender múltiples usuarios simultáneamente, ya sea en un entorno local o a través de una red.
 
-Sistemas Operativos Multiusuario:
+**Ejemplos de SO Multiusuario actuales:**
 
-* UNIX-GNU/LinuX
-* Windows NT (en adelante)
+* Linux (por ejemplo, Ubuntu 22.04)
+* Windows Server 2022
 
-### Según el número de tareas
+### Basados en la Capacidad de Tareas
 
 #### Monotarea
 
-Los sistemas monotarea son aquellos que sólo permiten una tarea a la vez por usuario. Puede darse el caso de un sistema multiusuario y monotarea, en el cual se admiten varios usuarios al mismo tiempo pero cada uno de ellos puede estar haciendo solo una tarea a la vez.
+Estos sistemas permiten la ejecución de una única tarea a la vez. Son menos comunes en la era actual debido a la demanda de multitarea.
 
 #### Multitarea
 
-Un sistema operativo multitarea es aquél que le permite al usuario estar realizando varias labores al mismo tiempo. Por ejemplo, puede estar editando el código fuente de un programa durante su depuración mientras compila otro programa, a la vez que está recibiendo correo electrónico en un proceso en background (segundo plano). Es común encontrar en ellos interfaces gráficas orientadas al uso de menús y el ratón, lo cual permite un rápido intercambio entre las tareas para el usuario, mejorando su productividad.
+Estos sistemas son capaces de gestionar y ejecutar múltiples tareas al mismo tiempo, proporcionando una experiencia más fluida y productiva para el usuario.
+
+**Ejemplos de sistemas multitarea modernos:**
+
+* Windows 11 Pro
+* MacOS Monterey
+* Android 13
 
 \newpage
 
-### Sistemas Operativos Distribuidos
+# Sistemas Operativos en Red y Computación Distribuida
 
-Un sistema distribuido se define como una colección de equipos informáticos separados físicamente y conectados entre sí por una red de comunicaciones distribuida; cada máquina posee sus componentes de hardware y software de modo que el usuario percibe que existe un solo sistema (no necesita saber qué cosas están en qué máquinas). El usuario accede a los recursos remotos de la misma manera en que accede a recursos locales ya que no percibe que existan varios ordenadores, sino que solo es capaz de ver uno formado por todos los anteriores.
-Una ventaja fundamental de los sistemas distribuidos, es que permiten aumentar la potencia del sistema informático, de modo que 100 ordenadores trabajando en conjunto, permiten formar un único ordenador que sería 100 veces más potente que un ordenador convencional.
+La computación ha evolucionado significativamente en las últimas décadas. La capacidad de conectar múltiples máquinas y hacer que trabajen en conjunto ha llevado a la creación de sistemas increíblemente poderosos que trascienden la capacidad de cualquier computadora individual. Veamos con más detalle los sistemas operativos distribuidos y cómo han influido en esta revolución.
 
-Los sistemas distribuidos son muy confiables, ya que si un componente del sistema se estropea otro componente debe de ser capaz de reemplazarlo, esto se denomina **Tolerancia a Fallos**.
+## Concepto de Sistema Operativo Distribuido
 
-El tamaño de un sistema distribuido puede ser muy variado, ya sean decenas de hosts (red de área local), centenas de hosts (red de área metropolitana), y miles o millones de hosts (Internet); esto se denomina escalabilidad. De hecho, si un ordenador formando por
-un sistema distribuido se queda “corto” para las necesidades de la empresa, basta con instalar más.
+Un sistema operativo distribuido conecta un conjunto de computadoras que están geográficamente dispersas a través de una red de comunicaciones. Estas máquinas operan de manera coordinada, ofreciendo la ilusión al usuario de que están interactuando con un solo sistema unificado. Esto significa que un recurso (como un archivo o un programa) puede residir en cualquier máquina del sistema y aún ser accesible para cualquier usuario, independientemente de su ubicación.
 
-La computación distribuida ha sido diseñada para resolver problemas demasiado grandes para cualquier supercomputadora y mainframe, mientras se mantiene la flexibilidad de trabajar en múltiples problemas más pequeños.
+### Beneficios Principales
 
-Esta forma de computación se conoce como **grid**. Los grandes retos de cálculo de hoy en día, como el descubrimiento de medicamentos,
-simulación de terremotos, inundaciones y otras catástrofes naturales, modelización del clima/tiempo, grandes buscadores de internet, el programa [Seti@Home](http://setiweb.ssl.berkeley.edu/), etc. Son posibles gracias a estos sistemas operativos distribuidos que permiten utilizar la computación distribuida.
+- **Aumento del Rendimiento**: Al conectar múltiples computadoras, se multiplica la potencia de procesamiento, permitiendo abordar tareas que serían imposibles para una sola máquina.
+  
+- **Confiabilidad y Tolerancia a Fallos**: Si un componente falla, el sistema continúa funcionando gracias a los componentes redundantes. Es decir, la operatividad no se ve comprometida por el fallo de una sola máquina.
 
-El modelo de computación de ciclos redundantes, también conocido como *computación zombi*, es el empleado por aplicaciones como *Seti@Home*, consistente en que un servidor o grupo de servidores distribuyen trabajo de procesamiento a un grupo de computadoras voluntarias a ceder capacidad de procesamiento no utilizada. Básicamente, cuando dejamos nuestro ordenador encendido, pero sin utilizarlo, la capacidad de procesamiento se desperdicia por lo general en algún protector de pantalla, este tipo de procesamiento distribuido utiliza nuestra computadora cuando nosotros no la necesitamos, aprovechando al máximo la capacidad de procesamiento. La consola PS3 también cuenta con una iniciativa de este tipo.
+- **Escalabilidad**: La capacidad del sistema puede ampliarse simplemente añadiendo más máquinas al conjunto.
 
-Otro método similar para crear sistemas de supercomputadoras es el clustering
+## Computación Distribuida: Grid y Clustering
 
-Un **cluster** o racimo de computadoras consiste en un grupo de computadoras de relativo bajo costo conectadas entre
-sí mediante un sistema de red de alta velocidad (gigabit de fibra óptica por lo general) y un software que realiza la distribución de la carga de trabajo entre los equipos. Por lo general, este tipo de sistemas cuentan con un centro de almacenamiento de datos único. Los clusters tienen la ventaja de ser sistemas redundantes, si falla un equipo se resiente un poco la potencia del cluster, pero los demás equipos hacen que no se note el fallo.
+Los desafíos computacionales actuales, como la simulación de fenómenos naturales, la búsqueda de nuevos fármacos o las operaciones a gran escala de motores de búsqueda, requieren de potencias de procesamiento que exceden las capacidades de los sistemas tradicionales. Aquí es donde la computación distribuida brilla.
 
-Algunos sistemas operativos que permiten realizar **clustering** o **grid**, son:
+- **Computación Grid**: Se refiere a la combinación de recursos computacionales de múltiples ubicaciones para alcanzar un objetivo común. Ejemplos notables incluyen el proyecto [Seti@Home](http://setiweb.ssl.berkeley.edu/), que busca señales de vida extraterrestre aprovechando el procesamiento no utilizado de computadoras voluntarias.
 
-* Amoeba
-* BProc
-* DragonFly BSD
-* Génesis
-* Kerrighed
-* Mosix/OpenMosix
-* Nomad
-* OpenSSI
-* Plurid
+- **Computación Zombie**: Es un modelo en el que se aprovecha la capacidad de procesamiento no utilizada de computadoras que están encendidas pero inactivas. En lugar de desperdiciar ese potencial en protectores de pantalla o tareas menores, se utiliza para procesos más complejos.
 
-Un cluster que usamos habitualmente, es el que forma **Google**. Se estima que en 2010 usaba unos 450.000 ordenadores, distribuidos en varias sedes por todo el mundo y formando clusters en cada una de dichas sedes.
+- **Clustering**: Implica conectar múltiples computadoras (usualmente a través de una red de alta velocidad) para que funcionen como una sola entidad. Estas agrupaciones, o "clusters", ofrecen redundancia y alta disponibilidad. Google, por ejemplo, utiliza clusters para manejar las innumerables solicitudes de búsqueda que recibe diariamente.
 
-Cada cluster de Google está formado por miles de ordenadores y en los momentos en que se detecta que el sistema está llegando al límite de su capacidad, se instalan cientos de ordenadores más en pocos minutos, aumentado así la potencia de cada cluster. Estos equipos normalmente con ordenadores x86 como los que solemos usar nosotros, tienen instalada versiones especiales de Linux, modificadas por Google para que permitan la formación de estos clusters.
+### Sistemas Operativos para Clustering y Grids:
 
-![Google](ArquitecturaSistemaOperativo/SO_Google.PNG)
-\
+Algunos de los sistemas operativos actuales y relevantes para esta tarea son:
 
-En la imagen anterior podemos ver el primer servidor funcional que uso **Google**. Como vemos, se basa en varios ordenadores instalados conjuntamente, a los que se les retiró simplemente la caja externa para dejar solo su contenido, a fin de aprovechar espacio en los armarios de comunicaciones.
+- Kubernetes (para orquestación de contenedores en clusters)
+- Apache Hadoop (para procesamiento distribuido de grandes conjuntos de datos)
+- OpenStack (para cloud computing)
 
-## Versiones en Windows
+![Google Data Center](ArquitecturaSistemaOperativo/SO_Google.PNG)
 
-Una vez tenemos claro que tipo de sistema operativo queremos instalar, y con qué propósito, es necesario hacer un pequeño estudio de que versión del mismo es la que más se adecua a nuestras necesidades.
+En la imagen, observamos el rudimentario pero funcional primer servidor de **Google**. Representa la esencia del pensamiento innovador: optimizar y escalar según las necesidades, incluso si eso significa deshacerse de la carcasa externa para aprovechar al máximo el espacio y los recursos.
 
-### Server
+# Explorando las Versiones de Windows
 
-En los sistemas Windows, si optamos por la familia de sistemas operativos para servidores, contamos con una serie de versiones que nos ofrecen determinadas opciones y características.
+La elección del sistema operativo correcto es esencial para garantizar un rendimiento y seguridad óptimos en nuestras actividades informáticas. A continuación, te ofrecemos un recorrido por las versiones de Windows, considerando las actualizaciones más recientes.
 
-Aquí podéis ver una tabla resumen con las diferencias entre las versiones.
+## Windows para Servidores
 
-[Comparativa Windows Server](https://www.microsoft.com/es-mx/cloud-platform/windows-server-comparison)
+Si estás buscando un sistema operativo robusto para servidores, Windows ofrece una variedad de opciones específicas según tus necesidades. Desde las versiones anteriores hasta la reciente Windows Server 2022, cada edición brinda características y capacidades específicas.
 
-![Windows Server](Versiones/WindowsServer_cover.png)
+Para una visión más detallada sobre las características y comparativas entre versiones, te recomendamos consultar:
+
+[Comparativa de Windows Server](https://www.microsoft.com/es-mx/cloud-platform/windows-server-comparison)
+
+![Representación de Windows Server](Versiones/WindowsServer_cover.png)
+
+## La Trayectoria de Windows: Desde sus Inicios hasta Windows 11
+
+Windows ha evolucionado considerablemente desde sus inicios con Windows 3.11 hasta llegar a Windows 11. A lo largo de los años, Microsoft ha lanzado diversas versiones, cada una con su periodo de soporte específico. Es importante recordar que, una vez finalizado el soporte, la versión en cuestión deja de recibir actualizaciones críticas.
+
+![Gráfico de Fin del Soporte](Versiones/fin-soporte-windows.png)
+
+## Windows 10 y su Filosofía de Actualizaciones
+
+Desde su lanzamiento, Windows 10 ha implementado un modelo de actualización continua, lo que significa que se incorporan mejoras y parches de seguridad con regularidad. Este enfoque busca ofrecer a los usuarios las últimas características de seguridad y rendimiento.
+
+Para estar informado sobre las actualizaciones más recientes y su contenido, es fundamental visitar:
+
+[Historial de Actualizaciones de Windows 10](https://support.microsoft.com/es-es/help/4464619/windows-10-update-history)
+
+Aunque en el material original se menciona la versión 1809 de Windows 10, es vital estar al tanto de que han existido múltiples actualizaciones desde entonces, fortaleciendo aún más la seguridad y funcionalidad del sistema.
+
+![Imagen de Windows 10 1809](Versiones/windows10-1809.png)
+
+## Adentrándonos en Windows 11
+
+Tras Windows 10, Microsoft ha presentado Windows 11, una versión que promete ser más intuitiva, segura y orientada a la productividad. Con una interfaz renovada y características optimizadas, Windows 11 se posiciona como la próxima era en el mundo de los sistemas operativos para escritorio. Si decides explorar esta versión, es vital familiarizarte con sus requisitos y características para aprovecharla al máximo.
+
+---
+
+Mantenerse al día con las versiones y actualizaciones es crucial para garantizar un sistema seguro y eficiente. Ya sea que prefieras Windows para servidores, escritorio o ambas opciones, elegir la versión adecuada es el primer paso hacia una experiencia informática optimizada.
+
+## Explorando el Diverso Universo de GNU/Linux
+
+GNU/Linux es un ecosistema vasto y diverso, con numerosas variantes desarrolladas por comunidades y empresas alrededor del mundo. Empresas reconocidas como Red Hat (ahora parte de IBM), Canonical (creadora de Ubuntu), y hasta Microsoft, han abrazado la flexibilidad y el potencial de este sistema operativo. Ejemplo de su omnipresencia es el sistema operativo Android, desarrollado por Google, el cual está basado en el kernel de Linux.
+
+La combinación del kernel Linux y las herramientas GNU conforman la base fundamental sobre la que se construyen estas distintas variantes o distribuciones.
+
+![GNU/LinuX Diversidad](Versiones/Gnu-and-penguin-color.png)
 \ 
 
-### Windows <= 10
+### Un Vistazo al Pasado
 
-Los sistemas Windows para escritorio han pasado por un montón de versiones, desde Windows 3.11 a Windows 10. Estas versiones han ido apareciendo en el tiempo y su soporte por parte de Microsoft ha ido _caducando_.
+Durante la década de 1970, `UNIX` dominaba el panorama tecnológico como un sistema operativo privativo, siendo el favorito entre los círculos académicos e industriales. Su popularidad radicaba en:
 
-![Fin del Soporte](Versiones/fin-soporte-windows.png)
+* Su portabilidad y adaptabilidad.
+* Una arquitectura limpia y sencilla.
+* Estabilidad notoria.
+* Políticas de distribución de software abiertas.
+* Normativas anti-monopolio que obligaban a AT&T, su propietario, a compartir el código con instituciones selectas.
+
+### El Viaje de Richard Stallman
+
+En contraste, Richard Stallman emergió de los laboratorios del MIT, perteneciendo a una tradición de programadores con una visión diferente.
+
+![Visión de Stallman](Versiones/stallman.jpg)
 \ 
 
-### Actualizaciones de Windows 10
+A medida que la década de 1980 comenzaba, la comunidad _hacker_ del MIT enfrentaba desafíos. Stallman, acostumbrado a un ambiente donde el software se compartía y se mejoraba colectivamente, vio la necesidad de crear un sistema operativo libre y moderno como respuesta a la creciente ola de software privativo. Nace así el proyecto GNU, con la misión de ser compatible con UNIX, pero con una esencia libre y colaborativa.
 
-Windows 10 incluye actualizaciones de manera constante, ya veremos más adelante en el módulo porqué se realizan estos cambios, es importante que por ahora tengamos en cuenta que es conveniente mantener nuestros sistemas actualizados y que es una buena práctica revisar las páginas oficiales de seguridad de los sistemas operativos que tenemos instalados en los equipos de los que somos responsables.
+### Linus Torvalds y el Nacimiento del Kernel Linux
 
-[Actualizaciones de Windows 10](https://support.microsoft.com/es-es/help/4464619/windows-10-update-history)
+En 1991, armado con las herramientas proporcionadas por el proyecto GNU, Linus Torvalds comenzó a desarrollar el kernel de Linux, inspirado en Minix, un sistema creado por Andrew Tanenbaum.
 
-Windows 10 ha cambiado respecto a los sistemas anteriores de Windows, permitiendo siempre la actualización a la última versión disponible (actualmente estamos en la 1809). De esta manera ofrece características de seguridad y no deben preocuparse de mantener software que no se actualiza. Esto lo veremos más adelante en profundidad.
-
-![Windows 10 1809](Versiones/windows10-1809.png)
+![El Creador de Linux](Versiones/Linus-Torvalds.jpg)
 \ 
 
-## Distribuciones de GNU/LinuX
+Las motivaciones iniciales de Torvalds surgieron de su deseo de tener una alternativa libre a Minix. Pese a las controversias iniciales con otros sistemas, Torvalds apostó por Linux, y en 1992, optó por la Licencia Pública General (GPL). El proyecto ganó tracción, y con la colaboración global, Linux evolucionó para ser una opción robusta y compatible con UNIX.
 
-Los sistemas GNU/LinuX son muy variados, ya que multitud de comunidades han realizado sus propias adaptaciones y selección de aplicaciones que desean llevar _por defecto_. Existen multitud de empresas que utilizan GNU/LinuX, desde Red Hat (IBM), Canonical (Ubuntu), Microsoft, y otras que aunque lo utilizan no ponen su marca en ella, uno de los ejemplos es Android y Google.
+La fusión del sistema GNU con el kernel Linux dio como resultado un sistema operativo completamente libre y funcional, conocido tanto como "GNU/Linux" como simplemente "distribución Linux".
 
-El núcleo (LinuX) + Herramientas (GNU) es lo que da lugar al sistema básico sobre el que las distribuciones y empresas trabajan.
+Aunque a lo largo de este módulo se usará tanto `GNU/LinuX` como `LinuX`, es vital reconocer que el término más preciso y reconocido en la comunidad es **GNU/LinuX**.
 
-![GNU/LinuX](Versiones/Gnu-and-penguin-color.png)
+### Distribuciones y Familias: El Árbol de la Vida de Linux
+
+Las distribuciones, al basarse en otras previas, heredan ciertas características y metodologías. Por ejemplo, las variantes basadas en Debian utilizan archivos `.deb` para la instalación de software y cuentan con repositorios específicos para esos paquetes.
+
+![Herencia Debian y Ubuntu](Versiones/debian_ubuntu.jpg)
 \ 
 
-### Un poco de historia
+Navegar por el vasto mar de distribuciones puede ser un desafío. Es esencial estar informado sobre las tendencias y las decisiones de las comunidades y empresas detrás de estas versiones.
 
-En la década de 1970 `UNIX` era un sistema operativo no libre o privativo muy popular entre los reducidos usuarios académicos e industriales de la época. 
+Para una visión más detallada de las distribuciones de GNU/LinuX, consulte el siguiente enlace:
 
-Su éxito es atribuido a :
+[Distribuciones Populares de GNU/LinuX](https://upload.wikimedia.org/wikipedia/commons/1/1b/Linux_Distribution_Timeline.svg)
 
-* la portabilidad
-* arquitectura simple
-* estable
-* prácticas liberales de distribución de software 
-* regulaciones anti-monopolio, que obligaron durante un tiempo a su propietario (AT&T) a ofrecer el código gratuitamente a diversas instituciones.
+## Panorama de Distribuciones de GNU/Linux Destacadas
 
-### Richard Stallman
+El ecosistema de GNU/Linux está repleto de distribuciones, cada una con su enfoque y propósito particular. A continuación, se presenta una revisión de algunas de las distribuciones más prominentes que han dejado una huella en la comunidad y la industria.
 
-Mientras tanto Stallman venía de una tradición de programadores completamente distinta en los laboratorios del MIT.
+### Debian: La Madre de Distribuciones
 
-![Richard Stallman](Versiones/stallman.jpg)
+![Logo de Debian](Versiones/debian.jpeg)
 \ 
 
-Hacia principios de la década de 1980 la comunidad _hacker_ del MIT se desmoronaba junto con sus sistemas.
+[Debian](https://www.debian.org/intro/about#what) es reconocida por su rigurosa adhesión a los principios del software libre y por su sistema de gestión de paquetes "apt". Es la base de muchas otras distribuciones, incluido Ubuntu.
 
-Habiéndose acostrumbrado a modificar y compartir tales programas en extinción; Stallman asegura que el desarrollo de un sistema operativo libre moderno y portátil (y con éste el lanzamiento del movimiento del software libre) fue una reacción contra lo que de otra manera le parecía un futuro desagradable rodeado de software privativo.
+### Ubuntu: Facilidad y Elegancia
 
-Así el sistema GNU fue diseñado para ser totalmente compatible con UNIX; aprovechando tanto el diseño modular y portable como sus usuarios.
-
-### Linus Torvalds
-
-Armado con las herramientas de GNU, en 1991 Linus Torvalds empezó a escribir el núcleo Linux inspirado en el libro de Minix de Andrew Tanenbaum (otro de los grandes).
-
-![Linus Torvalds](Versiones/Linus-Torvalds.jpg)
+![Logo de Ubuntu](Versiones/ubuntu-logo.png)
 \ 
 
-En sus primeros anuncios públicos Torvalds le atribuía su acción a la frustración de no poder usar Minix comercialmente, y a la ausencia de núcleos libres tipo Unix como GNU Hurd​ o el de BSD. A pesar de sus desacuerdos suscitados a raíz de la publicación de Linux, tanto Torvalds como Tanenbaum pronosticaban que el superior núcleo de GNU eventualmente dejaría obsoletos a Linux y Minix.
+[Ubuntu](https://www.ubuntu.com/) es una de las distribuciones más populares y accesibles para principiantes. Creada por Canonical, combina la estabilidad de Debian con un toque moderno, proporcionando actualizaciones regulares y características de vanguardia.
 
-En 1992 Torvalds decidió cambiar la licencia no comercial de Linux a la GPL. Rápidamente, múltiples programadores se unieron en el desarrollo, colaborando a través de Internet y consiguiendo que paulatinamente Linux fuera más serio, potente y compatible con UNIX. 
+### Fedora: Innovación y Avance
 
-Linux fue combinado con el resto del sistema GNU, resultando en un sistema operativo libre y completamente funcional que sigue usándose al día de hoy y en completa expansión.
-
-La combinación es conocida como "GNU/Linux" o como una "distribución Linux" y existen diversas variantes.
-
-A lo largo del módulo, veremos muchas veces `GNU/LinuX` y `LinuX` solo, pido disculpas a los puristas que puedan leer esta documentación. La nomenclatura `correcta` es **GNU/LinuX**.
-
-### Distribuciones y familias
-
-Cuando una distribución se basa en una anterior, lo que normalmente `adopta` es la manera de empaquetar y distribuir las aplicaciones que hace disponibles para los usuarios.
-
-Por ejemplo, las basadas en Debian, siguen utilizando `.deb` como paquetes de instalación, así como repositorios que disponen de esos debs de una determinada estructura.
-
-![Debian Ubuntu](Versiones/debian_ubuntu.jpg)
+![Logo de Fedora](Versiones/fedora.png)
 \ 
 
-El mundo de las distribuciones es muy complejo, y toca estar al dia de los movimientos de las comunidades y empresas que soportan estas distribuciones.
+[Fedora](https://getfedora.org/es/) es conocida por incorporar las últimas tecnologías y herramientas, sirviendo a menudo como campo de pruebas para características que eventualmente se incorporan en Red Hat Enterprise Linux.
 
-Aqui adjunto un enlace a las distribuciones de GNU/LinuX más famosas:
+### Red Hat: Estabilidad Empresarial
 
-[Distribuciones](https://upload.wikimedia.org/wikipedia/commons/1/1b/Linux_Distribution_Timeline.svg)
-
-### Distribuciones Famosas
-
-#### Debian
-
-![Debian](Versiones/debian.jpeg)
+![Logo de RedHat](Versiones/redhat.svg.png)
 \ 
 
-[Debian](https://www.debian.org/intro/about#what)
+[Red Hat](https://www.redhat.com/es) es una de las principales distribuciones comerciales, enfocada en proporcionar soluciones estables y soportadas para empresas. Su modelo de negocio se basa en el soporte y los servicios.
 
-#### Ubuntu 
+### OpenSUSE: Flexibilidad y Elección
 
-![Ubuntu](Versiones/ubuntu-logo.png)
-\
-
-[Ubuntu](https://www.ubuntu.com/)
-
-#### Fedora
-
-![Fedora](Versiones/fedora.png)
-\
-
-[Fedora](https://getfedora.org/es/)
-
-#### RedHat
-
-![RedHat](Versiones/redhat.svg.png)
+![Logo de OpenSUSE](Versiones/opensuse.png)
 \ 
 
-[Red Hat](https://www.redhat.com/es)
+[OpenSUSE](https://www.opensuse.org/) ofrece dos principales versiones: Leap, que se centra en la estabilidad, y Tumbleweed, que es rolling release y tiene las últimas versiones de software.
 
-#### OpenSuse
+### ArchLinux: Sencillez y Control Total
 
-![OpenSuse](Versiones/opensuse.png)
+![Logo de ArchLinuX](Versiones/archlinux.png)
 \ 
 
-[OpenSuse](https://www.opensuse.org/)
+[ArchLinux](https://www.archlinux.org/) adopta la filosofía de mantener las cosas simples. Es conocido por su sistema de paquetes "pacman" y por ofrecer a los usuarios un control total sobre su sistema.
 
-#### Archlinux
+### Alpine: Minimalismo y Seguridad
 
-![ArchLinuX](Versiones/archlinux.png)
+![Logo de Alpine](Versiones/alpine.png)
 \ 
 
-[ArchLinux](https://www.archlinux.org/)
-
-#### Alpine
-
-![Alpine](Versiones/alpine.png)
-\
-
-[Alpine](https://alpinelinux.org/)
+[Alpine](https://alpinelinux.org/) es una distribución ligera diseñada para la seguridad, simplicidad y eficiencia de recursos. Es especialmente popular en entornos de contenedores, como Docker.

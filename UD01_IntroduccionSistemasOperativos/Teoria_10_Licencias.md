@@ -1,6 +1,6 @@
 ---
 title: UD01 - Introducción a los Sistemas Operativos
-author: Angel Berlanas Vicente
+author: Angel Berlanas Vicente, Carlos Tessier
 header-includes: |
 lang: es-ES
 keywords: [ASIR, ISO, Arquitectura de un Sistema Informático, licencias]
@@ -94,8 +94,8 @@ uso.
 ## Tipos de licencias
 
 El siguiente gráfico puede expresar los distintos conjuntos de licencias, de donde se puede deducir que software libre y de fuente abierto no son estrictamente similares y que la cualidad del copyleft no es una condición indispensable en todas estas licencias.
-
-![Free Software](Licencias/FreeSoftware.PNG)
+-
+![Free Software](Licencias/FreeSoftware.PNG) 
 \
 
 El software no se vende, se *licencia*. Una licencia es aquella autorización formal con carácter contractual que un autor de un software da a un interesado para ejercer *actos de explotación legales*. Es decir, el software no se compra, sino que se adquieren una serie de derechos sobre el uso que se le puede dar. En las licencias de software libre esos derechos son muy abiertos y permisivos, apenas hay restricciones al uso de los programas. De ahí que ayude al desarrollo de la cultura. Pueden existir tantas licencias como acuerdos concretos se den entre el autor y el licenciatario. Desde el punto de vista del software libre, existen distintas variantes del concepto o grupos de licencias:
@@ -133,7 +133,7 @@ El titular de los derechos de autor (copyright) de un software bajo licencia cop
 
 En España, toda obra derivada está tan protegida como una original, siempre que la obra derivada parta de una autorización contractual con el autor. En el caso genérico de que el autor retire las licencias "copyleft", no afectaría de ningún modo a los productos derivados anteriores a esa retirada, ya que no tiene efecto retroactivo. En términos legales, el autor no tiene derecho a retirar el permiso de una licencia en vigencia. Si así sucediera, el conflicto entre las partes se resolvería en un pleito convencional.
 
-![Grafico conceptual SL](https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Mapa_conceptual_del_software_libre.svg/800px-Mapa_conceptual_del_software_libre.svg.png)
+![Grafico conceptual SL](Licencias/Mapa_conceptual_del_software_libre.svg.png) 
 \
 
 \newpage
@@ -174,5 +174,5 @@ Son las licencias más caras evidentemente, aunque son bastante más económicas
 
 Son unas licencias especiales de Microsoft que permiten su uso únicamente para actividades educativas y de formación. Cualquier uso de estas licencias en equipos que desarrollen actividades fuera de este ámbito, es ilegal. Existen también licencias de este tipo para empresas de desarrollo, academias, etc.
 
-![OEM](Licencias/SO_OEM.PNG)
+<!-- ![OEM](Licencias/SO_OEM.PNG) -->
 \ 
